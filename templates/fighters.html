@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Combattants - MMA Dex</title>
+</head>
+<body>
+
+    <header>
+        <h1>MMA Dex</h1>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/fighters">Combattants</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Les combattants</h2>
+
+        {{range $id, $fighter := .}}
+
+        <article>
+            <h3>
+                <a href="/fighter?id={{$id}}">{{$fighter.Name}}</a>
+            </h3>
+
+            <img src="{{$fighter.ImgUrl}}" alt="{{$fighter.Name}}" width="120">
+
+            <ul>
+                <li>Catégorie : {{$fighter.Category}}</li>
+                <li>Victoires : {{$fighter.Wins}}</li>
+                <li>Défaites : {{$fighter.Losses}}</li>
+                <li>Matchs nuls : {{$fighter.Draws}}</li>
+            </ul>
+        </article>
+
+        {{end}}
+    </main>
+
+    <footer>
+        <p>Projet DataDex - MMA Dex</p>
+    </footer>
+
+</body>
+</html>

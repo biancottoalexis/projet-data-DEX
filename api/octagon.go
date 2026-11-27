@@ -58,3 +58,5 @@ func GetAllFighters() (map[string]models.Fighter, error) {
 
 	return fighters, err
 }
+
+
